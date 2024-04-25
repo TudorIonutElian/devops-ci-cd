@@ -8,5 +8,6 @@ terraform {
     key            = "devops-ci-cd-12345678.tfstate"
     region         = "eu-central-1"
     dynamodb_table = "devops-ci-cd-12345678"
+    profile        = "default"
   }
 }
