@@ -10,6 +10,13 @@ resource "aws_instance" "teamcity_ec2_instance" {
   provisioner "file" {
     source      = "docker-compose.yml"
     destination = "~/docker-compose.yml"
+
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = file("teamcity-key.pem")
+      host        = self.public_ip
+    }
   }
 
   tags = {
