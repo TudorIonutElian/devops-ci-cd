@@ -7,7 +7,7 @@ resource "aws_instance" "teamcity_ec2_instance" {
   key_name      = var.teamcity_key_name 
   user_data     = file("scripts/teamcity_entry.sh")
 
-  provisioner "dockerfile" {
+  provisioner "file" {
     source      = "docker-compose.yml"
     destination = "~/docker-compose.yml"
   }
