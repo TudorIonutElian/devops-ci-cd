@@ -15,5 +15,5 @@ resource "aws_route53_record" "teamcity_subdomain" {
   name    = "teamcity.learndevtech.com"
   type    = "A"
   ttl     = "300"
-  records = [module.cloudwatch_ec2_development.public_ip]
+  records = [aws_instance.teamcity_ec2_instance.public_ip]
 }
