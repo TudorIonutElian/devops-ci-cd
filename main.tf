@@ -13,7 +13,7 @@ terraform {
 **********************************************************/
 
 provider "aws" {
-  shared_config_files      = ["~/.aws/devops-ci-cd/config"]
-  shared_credentials_files = ["~/.aws/devops-ci-cd/credentials"]
+  shared_config_files      = ["~/.aws/config"]
+  shared_credentials_files = ["~/.aws/credentials"]
   profile                  = "default"
 }
