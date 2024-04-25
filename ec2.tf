@@ -7,18 +7,6 @@ resource "aws_instance" "teamcity_ec2_instance" {
   key_name      = var.teamcity_key_name 
   user_data     = file("scripts/teamcity_entry.sh")
 
-  provisioner "file" {
-    source      = "docker-compose.yml"
-    destination = "~/docker-compose.yml"
-
-    connection {
-      type        = "ssh"
-      user        = "ec2-user"
-      private_key = file("teamcity_key_pair.pem")
-      host        = self.public_ip
-    }
-  }
-
   tags = {
     Name = "teamcity-ec2-instance"
   }
