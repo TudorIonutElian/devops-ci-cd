@@ -15,7 +15,7 @@ sudo echo 'export PATH=$PATH:/usr/local/bin' >> ~/.bashrc
 source ~/.bashrc 
 
 sudo mkdir teamcity
-cd ~/teamcity
+cd teamcity
 sudo mkdir data
 sudo mkdir logs
 sudo mkdir agent
