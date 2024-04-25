@@ -13,7 +13,7 @@ resource "aws_instance" "teamcity_ec2_instance" {
 
     connection {
       type        = "ssh"
-      user        = "ubuntu"
+      user        = "ec2-user"
       private_key = file("teamcity-key.pem")
       host        = self.public_ip
     }
